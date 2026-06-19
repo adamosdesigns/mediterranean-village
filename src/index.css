@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Montserrat", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Cormorant Garamond", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+
+  --color-sand: #F5F2ED;
+  --color-sand-dark: #E8E3DA;
+  --color-navy: #1A2B3C;
+  --color-navy-light: #2C425A;
+  --color-palm: #4A5D4E;
+  --color-ocean: #3B5998;
+  --color-warm-white: #FAFAFA;
+  --color-deep-gray: #2D2D2D;
+  --color-gold: #D4AF37;
+}
+
+@layer base {
+  body {
+    @apply font-sans bg-warm-white text-deep-gray antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif font-light tracking-tight;
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom utilities for luxury feel */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .text-pretty {
+    text-wrap: pretty;
+  }
+  .leading-tight {
+    line-height: 0.95 !important;
+  }
+}
+
+/* Accessibility Classes */
+html.ada-text-scaled {
+  font-size: var(--ada-text-scale, 120%) !important;
+}
+
+html.ada-high-contrast {
+  filter: contrast(150%) saturate(150%) !important;
+}
+
+html.ada-grayscale {
+  filter: grayscale(100%) !important;
+}
+
+html.ada-dyslexia-font,
+html.ada-dyslexia-font * {
+  font-family: "Comic Sans MS", "OpenDyslexic", sans-serif !important;
+}
+
+html.ada-highlight-links a,
+html.ada-highlight-links button {
+  outline: 3px solid #FFD700 !important;
+  outline-offset: 2px !important;
+}
+
+html.ada-text-spacing,
+html.ada-text-spacing * {
+  letter-spacing: 0.1em !important;
+  word-spacing: 0.2em !important;
+  line-height: 1.5 !important;
+}
+
